@@ -14,7 +14,7 @@ Roo Code is composed of a few products:
 - **Roo Code Router** (the model router) offers both free and paid models
 - **Roo Code Cloud Agents** (the automous agents) are a paid feature as they incur infrastructure costs
 
-In order to use paid models via our provider and to run Cloud agents, you need credits.
+In order to use paid models via our router and to run Cloud agents, you need credits.
 
 :::info Up-to-date pricing
 You can see the plans we offer and the most up-to-date pricing on our [pricing page](https://roocode.com/pricing)
@@ -32,7 +32,7 @@ Credits are shown in dollars, there's no shenanigans in converting it to obscure
 
 Our [pricing page](https://roocode.com/pricing) always has the latest on our plans and Cloud Agent pricing.
 
-Model pricing can be found in the [provider page](https://roocode.com/provider) of our website.
+Model pricing can be found in the [router page](https://roocode.com/router) of our website.
 
 We don't include prices here just to make sure they're always up-to-date.
 
