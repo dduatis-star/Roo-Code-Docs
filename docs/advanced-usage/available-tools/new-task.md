@@ -46,12 +46,12 @@ This tool creates a new task instance with a specified starting mode and initial
 ## Key Features
 
 - Creates subtasks with their own conversation history and specialized mode
-- Pauses parent tasks for later resumption
+- Marks parent tasks as delegated for later resumption
 - Maintains hierarchical task relationships for navigation
 - Transfers results back to parent tasks upon completion
 - Supports workflow segregation for complex projects
 - Allows different parts of a project to use modes optimized for specific work
-- Requires explicit user approval for task creation
+- Asks for approval by default (can be auto-approved if Auto-Approve “Create & complete subtasks” is enabled)
 - Provides clear task transition in the UI
 
 ---
@@ -59,26 +59,26 @@ This tool creates a new task instance with a specified starting mode and initial
 ## Limitations
 
 - Cannot create tasks with modes that don't exist
-- Requires user approval before creating each new task
+- Asks for approval before creating each new task by default
 - Task interface may become complex with deeply nested subtasks
 - Subtasks inherit certain workspace and extension configurations from parents
 - May require re-establishing context when switching between deeply nested tasks
-- Task completion needs explicit signaling to properly return to parent tasks
+- Task completion needs explicit signaling (via `attempt_completion`) to properly return to parent tasks
 
 ---
 
 ## How It Works
 
-When the `new_task` tool is invoked, it follows this process:
+When the `new_task` tool is invoked, it follows this process (high level):
 
 1. **Parameter Validation**:
    - Validates the required `mode` and `message` parameters
    - Verifies that the requested mode exists in the system
 
 2. **Task Stack Management**:
-   - Maintains a task stack that tracks all active and paused tasks
+   - Maintains task history and a single active task
    - Preserves the current mode for later resumption
-   - Sets the parent task to paused state
+   - Marks the parent task as delegated while the subtask runs
 
 3. **Task Context Management**:
    - Creates a new task context with the provided message
@@ -91,8 +91,9 @@ When the `new_task` tool is invoked, it follows this process:
    - Integrates with VS Code's command palette and code actions
 
 5. **Task Completion and Result Transfer**:
-   - When subtask completes, result is passed back to parent task via `finishSubTask()`
-   - Parent task resumes in its original mode
+   - When the subtask calls `attempt_completion`, Roo prompts you to finish the subtask and return to the parent
+   - The parent is reopened from delegation and resumes in its original mode
+   - The subtask’s final summary is posted back to the parent as a `subtask_result`
    - Task history and token usage metrics are updated
    - The `taskCompleted` event is emitted with performance data
 

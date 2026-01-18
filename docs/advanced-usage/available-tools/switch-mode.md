@@ -47,7 +47,7 @@ This tool requests a mode change when the current task would be better handled b
 
 - Maintains context continuity across mode transitions
 - Provides clear reasoning for mode switch recommendations
-- Requires user approval for all mode changes
+- Asks for approval by default (can be auto-approved if Auto-Approve “Switch modes” is enabled)
 - Enforces tool group restrictions specific to each mode
 - Seamlessly adapts tool availability based on the selected mode
 - Works with both standard and custom modes
@@ -60,7 +60,7 @@ This tool requests a mode change when the current task would be better handled b
 ## Limitations
 
 - Cannot switch to modes that don't exist in the system
-- Requires explicit user approval for each mode transition
+- Asks for explicit approval for each mode transition by default
 - Cannot use tools specific to a mode until the switch is complete
 - Applies a 500ms delay after mode switching to allow the change to take effect
 - Some modes have file type restrictions (e.g., Architect mode can only edit markdown files)
@@ -80,7 +80,7 @@ When the `switch_mode` tool is invoked, it follows this process:
 
 2. **Mode Transition Preparation**:
    - Packages the mode change request with the provided reason
-   - Presents the change request to the user for approval
+   - Presents the change request to the user for approval (unless mode switching is auto-approved)
 
 3. **Mode Activation (Upon User Approval)**:
    - Updates the UI to reflect the new mode
