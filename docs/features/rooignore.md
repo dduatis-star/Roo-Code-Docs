@@ -80,7 +80,7 @@ These tools directly check `.rooignore` before any file operation. If a file is 
 
 ## User Experience and Notifications
 
-*   **Visual Cue (🔒)**: In file listings and `@directory` attachments, files ignored by `.rooignore` may be marked with a lock symbol (🔒), depending on the `showRooIgnoredFiles` setting (defaults to `true`).
+*   **Visual Cue (🔒)**: In file listings and `@directory` attachments, files ignored by `.rooignore` may be marked with a lock symbol (🔒), depending on the `showRooIgnoredFiles` setting (default may depend on whether the setting has been saved yet).
 *   **Ignore Messages**: Single file mentions return "(File is ignored by .rooignore)" instead of content.
 *   **Error Messages**: If a tool operation is blocked, Roo receives an error: `"Access to [file_path] is blocked by the .rooignore file settings. You must try to continue in the task without using this file, or ask the user to update the .rooignore file."`
 *   **Chat Notifications**: You will typically see a notification in the Roo chat interface when an action is blocked due to `.rooignore`.

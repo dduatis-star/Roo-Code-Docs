@@ -10,10 +10,11 @@ keywords:
 ---
 
 import KangarooIcon from '@site/src/components/KangarooIcon';
+import Codicon from '@site/src/components/Codicon';
 
 # Model Temperature
 
-Temperature controls the randomness of AI model outputs. Adjusting this setting optimizes results for different tasks - from precise code generation to creative brainstorming. Temperature is one of the most powerful parameters for controlling AI behavior. A well-tuned temperature setting can dramatically improve the quality and appropriateness of responses for specific tasks.
+Temperature controls how random or predictable an AI model’s output is. Adjust it to optimize results for different tasks—from precise code generation to creative brainstorming.
 
 <img src="/img/model-temperature/model-temperature.gif" alt="Animation showing temperature slider adjustment" width="100%" />
 
@@ -36,9 +37,9 @@ Temperature controls output randomness, not code quality or accuracy directly. K
 
 ## Default Values in Roo Code
 
-Roo Code uses a default temperature of 0.0 for most models, optimizing for maximum determinism and precision in code generation. This applies to OpenAI models, Anthropic models (non-thinking variants), LM Studio models, and most other providers.
+Roo Code falls back to a default temperature of 0.0 unless the selected model/provider defines its own `defaultTemperature`.
 
-Some models use higher default temperatures - DeepSeek R1 models and certain reasoning-focused models default to 0.6, providing a balance between determinism and creative exploration.
+Some models use higher default temperatures — for example, DeepSeek R1 models default to 0.3.
 
 Models with thinking capabilities (where the AI shows its reasoning process) require a fixed temperature of 1.0 which cannot be changed, as this setting ensures optimal performance of the thinking mechanism. This applies to any model with the ":thinking" flag enabled.
 

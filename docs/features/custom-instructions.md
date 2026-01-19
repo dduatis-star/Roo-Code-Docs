@@ -73,7 +73,7 @@ These instructions apply across all workspaces and maintain your preferences reg
 **How to set them:**
 
 <img src="/img/custom-instructions/custom-instructions.png" alt="Roo Code Prompts tab showing global custom instructions interface" width="600" />
-1.  **Open Prompts Tab:** Click the <Codicon name="notebook" /> icon in the Roo Code top menu bar
+1.  **Open Prompts Tab:** Click the notebook icon in the Roo Code top menu bar
 2.  **Find Section:** Find the "Custom Instructions for All Modes" section
 3.  **Enter Instructions:** Enter your instructions in the text area
 4.  **Save Changes:** Click "Done" to save your changes
@@ -204,7 +204,7 @@ Mode-specific instructions can be set in two independent ways that can be used s
 1.  **Using the Prompts Tab:**
 
     <img src="/img/custom-instructions/custom-instructions-2.png" alt="Roo Code Prompts tab showing mode-specific custom instructions interface" width="600" />
-    * **Open Tab:** Click the <Codicon name="notebook" /> icon in the Roo Code top menu bar
+    * **Open Tab:** Click the notebook icon in the Roo Code top menu bar
     * **Select Mode:** Under the Modes heading, click the button for the mode you want to customize
     * **Enter Instructions:** Enter your instructions in the text area under "Mode-specific Custom Instructions (optional)"
     * **Save Changes:** Click "Done" to save your changes
@@ -278,10 +278,10 @@ Rules:
 * **Recursive Reading:** Rules directories are read recursively, including all files in subdirectories
 * **File Filtering:** System automatically excludes cache and temporary files (`.DS_Store`, `*.bak`, `*.cache`, `*.log`, `*.tmp`, `Thumbs.db`, etc.)
 * **Empty Files:** Empty or missing rule files are silently skipped
-* **Source Headers:** Directory-based rules include per-file headers `# Rules from {absolute path}:`, while file-based rules include `# Rules from {filename}:` headers
+* **Source Headers:** Directory-based rules include per-file headers `# Rules from {relative path}:`, while file-based rules include `# Rules from {filename}:` headers
 * **Aggregation:** Both global and workspace rules directories are aggregated for mode-specific and generic rules (not either-or)
 * **Sorting:** Files are sorted by basename only, case-insensitive
-* **Header Paths:** Header paths are absolute and follow symlinks
+* **Header Paths:** Header paths are shown relative to the workspace; symlinks are resolved for reading (max depth 5)
 * **Rule Interaction:** Mode-specific rules complement global rules rather than replacing them
 * **Symbolic Links:** Fully supported for both files and directories, with a maximum resolution depth of 5 to prevent infinite loops
 

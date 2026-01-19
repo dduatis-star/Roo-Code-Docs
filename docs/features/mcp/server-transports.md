@@ -112,12 +112,15 @@ Streamable HTTP transport is ideal for:
 
 ### Streamable HTTP Implementation Example
 
-Configuration in `settings.json`:
+In Roo Code, MCP servers are configured in `mcp_settings.json` (global) or `.roo/mcp.json` (project):
+
 ```json
-"mcp.servers": {
-  "StreamableHTTPMCPName": {
-    "type": "streamable-http",
-    "url": "http://localhost:8080/mcp"
+{
+  "mcpServers": {
+    "StreamableHTTPMCPName": {
+      "type": "streamable-http",
+      "url": "http://localhost:8080/mcp"
+    }
   }
 }
 ```

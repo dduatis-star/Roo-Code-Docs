@@ -32,8 +32,8 @@ Roo Code allows you to create **custom modes** to tailor Roo's behavior to speci
 
 <br />
 
-:::tip Sticky Models for Efficient Workflow
-Each mode—including custom ones—features **Sticky Models**. This means Roo Code automatically remembers and selects the last model you used with a particular mode. This lets you assign different preferred models to different tasks without constant reconfiguration, as Roo switches between models when you change modes.
+:::tip Sticky API Config per mode
+Each mode—including custom ones—remembers and restores the last **API configuration / provider profile** you used with that mode. This lets you assign different preferred provider/model/settings to different tasks without constant reconfiguration.
 :::
 
 :::info Discover Community Modes
@@ -112,6 +112,8 @@ Roo packages the mode's configuration and any rules found in the project's `.roo
     -   **Global**: The mode is available in all your projects. It's added to your global settings, and its rules are stored in your system's global Roo configuration directory (e.g., `~/.roo/rules-{slug}/`).
 
 **Note:** When exporting modes with rules, all file paths are normalized to use forward slashes for cross-platform compatibility. This ensures modes can be shared between team members using different operating systems.
+
+**Note:** Export includes rule files found directly inside the rules folder (not nested subfolders).
 
 ---
 

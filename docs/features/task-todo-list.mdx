@@ -82,29 +82,21 @@ Todo lists appear in multiple places:
 
    <img src="/img/task-todo-list/task-todo-list-2.png" alt="Interactive todo list tool block in chat" width="600" />
 
-3. **Environment Details**: Todo lists appear as a "REMINDERS" table in the environment_details section, giving the AI persistent access to current todo state. Note: If the `todoListEnabled` setting is disabled, the reminders section will not appear in environment details.
+3. **Environment Details**: Todo lists appear as a "REMINDERS" table in the environment_details section, giving the AI persistent access to current todo state.
 
 ### Expanded Todo View
 
-When you click on the collapsed todo summary in the task header, a floating panel appears with enhanced functionality:
-- **Backdrop overlay**: Click outside the panel to close it
-- **Full todo list display**: Shows all todos with their current status indicators
-- **Auto-scroll**: Automatically scrolls to the current in-progress task
-- **Smooth animations**: Collapse and expand transitions for better user experience
-- **Persistent state**: Maintains your scroll position when reopening
+Click the todo summary in the task header to expand/collapse an inline list of all todo items. When expanded, Roo auto-scrolls the list to the current in-progress item (or the first incomplete item).
 
 ### Understanding Task Status
 
 Roo Code automatically manages status progression based on task progress. Each todo item has one of three states:
 
-**Pending**: Shows an empty circle with a border, indicating the task hasn't been started yet
-![Pending todo item with empty circle](../../static/img/task-todo-list/task-todo-list-4.png)
+**Pending**: Dashed square icon, indicating the task hasn’t been started yet
 
-**In Progress**: Displays a filled yellow circle, showing the task is currently being worked on
-![In progress todo item with yellow circle](../../static/img/task-todo-list/task-todo-list-5.png)
+**In Progress**: Arrow icon (highlighted), showing the task is currently being worked on
 
-**Completed**: Features a filled green circle, confirming the task is fully finished
-![Completed todo item with green circle](../../static/img/task-todo-list/task-todo-list-6.png)
+**Completed**: Check icon, confirming the task is finished
 
 ### Editing Todo Lists During Approval
 
@@ -119,7 +111,7 @@ When Roo presents a todo list update for approval, you have full control through
 3. **Save or Cancel** your changes
 4. **Approve or Reject** the overall update
 
-Note: Your edits are staged and only applied when Roo processes the next todo list update. This maintains Roo's control over the workflow while giving you input on task details.
+Note: Edits you make in the approval UI are sent back immediately and will be applied if you approve the update.
 
 ---
 
@@ -140,7 +132,4 @@ This is an architectural design decision where Roo Code maintains authority over
 
 ### Disabling Todo Lists
 
-You can disable todo lists entirely through the `todoListEnabled` setting. When disabled:
-- Roo will not create todo lists for any tasks
-- The REMINDERS section will not appear in environment details
-- Existing todo lists will remain visible but won't be updated
+Todo-related behavior can be influenced by settings such as `roo-cline.newTaskRequireTodos` and `roo-cline.preventCompletionWithOpenTodos`.

@@ -82,12 +82,12 @@ Browse http://localhost:3000, scroll down to the bottom of the page and check if
 
 ## How Browser Actions Work
 
-The browser_action tool controls a browser instance that returns screenshots and console logs after each action, allowing you to see the results of interactions.
+Browser actions control a browser session and return screenshots (and logs) after each step, so you can verify results as you go.
 
 Key characteristics:
 - Each browser session must start with `launch` and end with `close`
 - Only one browser action can be used per message
-- While the browser is active, no other tools can be used
+- You can use other tools while the browser session is active
 - You must wait for the response (screenshot and logs) before performing the next action
 
 ### Available Browser Actions
@@ -103,10 +103,11 @@ Key characteristics:
 | `hover` | Moves cursor to coordinates | Triggering hover states |
 | `press` | Presses a key combination | Keyboard shortcuts, Enter, Esc |
 | `resize` | Resizes the viewport | Testing responsive designs |
+| `screenshot` | Saves a screenshot to a file path | Capturing page state for later review |
 
 ---
 
-## Browser Use Configuration/Settings
+## Settings
 
 :::info Default Browser Settings
 - **Enable browser tool**: Enabled

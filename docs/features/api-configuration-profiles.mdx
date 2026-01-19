@@ -40,7 +40,7 @@ Having multiple configuration profiles lets you quickly switch between different
 Configuration profiles can have their own:
 - API providers (OpenAI, Anthropic, OpenRouter, Glama, etc.)
 - API keys and authentication details
-- Model selections (o3-mini-high, Claude 3.7 Sonnet, DeepSeek R1, etc.)
+- Model selections (for example: o3-mini-high, Claude 3.7 Sonnet, DeepSeek R1)
 - [Temperature settings](/features/model-temperature) for controlling response randomness
 - Thinking budgets
 - Provider-specific settings
@@ -73,9 +73,8 @@ Note that available settings vary by provider and model. Each provider offers di
    
       <img src="/img/api-configuration-profiles/api-configuration-profiles-8.png" alt="Model selection interface" width="550" />
    - Configure the **Rate Limit** for this profile:
-     - **Default is 0 (disabled), which is suitable for most users.** If needed, you can set a minimum time (in seconds) between API requests *for this profile* to help manage costs or avoid provider rate limits.
-     - A value of 0 disables rate limiting (default).
-     - Requests using other profiles follow their own rate limits.
+     - **Default is 0 (disabled), which is suitable for most users.** Set a minimum time (seconds) between requests *for this profile* to manage costs or reduce provider throttling.
+     - Other profiles use their own rate limit settings.
 
          <img src="/img/api-configuration-profiles/api-configuration-profiles-12.png" alt="Rate limit slider control within API profile settings" width="550" />
    - Adjust model parameters (like [temperature](/features/model-temperature))
@@ -95,8 +94,8 @@ The API configuration dropdown now supports pinning your favorite profiles for q
 
 1. Hover over any profile in the dropdown to reveal the pin icon
 2. Click the pin icon to add the profile to your pinned list
-3. Pinned profiles appear at the top of the dropdown, sorted alphabetically
-4. Unpinned profiles appear below a separator, also sorted alphabetically
+3. Pinned profiles appear at the top of the dropdown (with a separator)
+4. The list order follows your saved profile order (typically creation order)
 5. You can unpin a profile by clicking the same icon again
 
 <img src="/img/api-configuration-profiles/api-configuration-profiles-4.png" alt="Pinning API configuration profiles" width="550" />

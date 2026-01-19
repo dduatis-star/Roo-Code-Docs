@@ -19,7 +19,7 @@ The "Enhance Prompt" feature in Roo Code helps you improve the quality and effec
 ## Why Use Enhance Prompt?
 
 *   **Improved Clarity:**  Roo Code can rephrase your prompt to make it more understandable for the AI model.
-*   **Added Context:**  The enhancement process can add relevant context to your prompt, such as the current file path or selected code.
+*   **Added Context:** The enhancement process can add relevant context to your prompt, such as recent conversation history (when enabled).
 *   **Better Instructions:**  Roo Code can add instructions to guide the AI towards a more helpful response (e.g., requesting specific formatting or a particular level of detail).
 *   **Reduced Ambiguity:**  Enhance Prompt helps to eliminate ambiguity and ensure that Roo Code understands your intent.
 *   **Consistency**: Roo will consistently format prompts the same way to the AI.
@@ -32,7 +32,7 @@ The "Enhance Prompt" feature in Roo Code helps you improve the quality and effec
 1.  **Type your initial prompt:**  Enter your request in the Roo Code chat input box as you normally would.  This can be a simple question, a complex task description, or anything in between.
 2.  **Click the Wand Icon:**  Instead of pressing Enter, click the wand icon located in the top right corner of the chat input box. While Roo processes your enhancement request, the wand icon will spin to indicate it's working.
 3.  **Review the Enhanced Prompt:**  Roo Code will replace your original prompt with an enhanced version.  Review the enhanced prompt to make sure it accurately reflects your intent. You can further refine the enhanced prompt before sending. Changed your mind? You can undo the enhancement using Ctrl+Z (Cmd+Z on Mac) to restore your original prompt.
-4.  **Send the Enhanced Prompt:**  Press Enter or click the Send icon (<Codicon name="send" />) to send the enhanced prompt to Roo Code.
+4.  **Send the Enhanced Prompt:** Press Enter or click the Send button to send the enhanced prompt to Roo Code.
 
 ---
 
@@ -54,7 +54,7 @@ The "Enhance Prompt" feature uses a customizable prompt template. You can modify
 
 ### Accessing Prompts Settings
 
-1.  **Open Settings:** Click the gear icon (<Codicon name="gear" />) in the Roo Code panel or use the settings command.
+1.  **Open Settings:** Click the gear icon in the Roo Code panel or use the settings command.
 2.  **Navigate to Prompts:** Go to the "Prompts" tab in the settings.
 3.  **Select "ENHANCE":** From the dropdown menu, select "ENHANCE" to view and edit the enhancement prompt.
 

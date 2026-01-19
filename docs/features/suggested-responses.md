@@ -42,14 +42,14 @@ You have three options for using suggested responses:
     *   **Result**: The selected answer is immediately sent back to Roo as your response. This is the quickest way to reply if one of the suggestions perfectly matches your intent.
 
 2.  **Keyboard Shortcut**:
-    *   **Action**: Use the `roo.acceptInput` command with your configured keyboard shortcut.
-    *   **Result**: The primary (first) suggestion button is automatically selected.
+    *   **Action**: Use the `roo-cline.acceptInput` command with your configured keyboard shortcut.
+    *   **Result**: If Roo is showing action buttons (for example: Approve/Run), this triggers the primary action. It does not specifically select a follow-up suggestion.
     *   **Note**: For setup details, see [Keyboard Shortcuts](/features/keyboard-shortcuts).
 
 3.  **Edit Before Sending**:
     *   **Action**:
         *   Hold down `Shift` and click the suggestion button.
-        *   *Alternatively*, hover over the suggestion button and click the pencil icon (<Codicon name="edit" />) that appears.
+        *   *Alternatively*, hover over the suggestion button and click the copy icon that appears.
     *   **Result**: The text of the suggestion is copied into the chat input box. You can then modify the text as needed before pressing Enter to send your customized response. This is useful when a suggestion is close but needs minor adjustments.
 
 <img src="/img/suggested-responses/suggested-responses-1.png" alt="Chat input box showing text copied from a suggested response, ready for editing" width="600" />

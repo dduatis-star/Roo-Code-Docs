@@ -10,7 +10,7 @@ keywords:
 sidebar_label: 'Multi-File Reads'
 ---
 
-# Concurrent File Reads (AKA Multi-File Reads)
+# Multi-File Reads (Concurrent File Reads)
 
 The Concurrent File Reads feature allows Roo to read multiple files from your workspace in a single step. This significantly improves efficiency when working on tasks that require context from several files, as Roo can gather all the necessary information at once instead of reading files one by one.
 
@@ -64,7 +64,7 @@ When Roo requests to read multiple files, you'll see a batch approval interface 
 
 ## Configuration
 
-You can configure the Multi-File Read feature by clicking the <Codicon name="gear" /> icon and navigating to the "Context" section of the settings.
+You can configure Multi-File Reads by clicking the gear icon in Roo Code settings, then opening the **Context** section.
 
 <img src="/img/concurrent-file-reads/concurrent-file-reads-1.png" alt="Concurrent file reads settings showing limit slider" width="600" />
 
@@ -73,5 +73,5 @@ You can configure the Multi-File Read feature by clicking the <Codicon name="gea
     *   **Description**: This setting determines the maximum number of files that Roo can read in a single request. The default is 5, with a range of 1-100 files. Higher values can speed up tasks involving many small files but may use more memory. Setting the value to 1 effectively disables concurrent reads, reverting to single-file reads.
 
 :::note
-The per‑request file limit is configured in the UI (default 5, up to 100). The backend [`read_file`](/advanced-usage/available-tools/read-file) tool doesn’t hard‑enforce a cap; actual behavior may also depend on the selected model/tool.
+The per‑request file limit is configured in the UI (default 5, up to 100). The [`read_file`](/advanced-usage/available-tools/read-file) tool enforces this cap; if you request more files than allowed, Roo will ask you to split reads into smaller batches.
 :::

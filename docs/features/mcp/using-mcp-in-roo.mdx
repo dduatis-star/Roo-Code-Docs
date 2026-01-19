@@ -209,7 +209,7 @@ Streamable HTTP configuration example:
 
   SSE (Legacy) configuration parameters:
 
-  *   `type` (optional, but recommended for clarity): Should be set to `"sse"` if providing a `url` for an SSE server, to distinguish from Streamable HTTP. If `url` is present and `type` is omitted, Roo Code might try to infer, but explicit declaration is safer.
+  *   `type` (required when `url` is present): Must be explicitly set to either `"sse"` or `"streamable-http"`.
   *   `url` (required): The base URL for the remote MCP server. For legacy SSE, this usually implies separate paths like `/events` (for SSE stream) and `/message` (for POST requests) will be derived or expected by the server.
   *   `headers` (optional): An object containing custom HTTP headers to send with requests (e.g., for authentication tokens).
   *   `alwaysAllow` (optional): An array of tool names from this server to automatically approve.
@@ -310,7 +310,7 @@ Each MCP server has its own configuration panel where you can modify settings, m
 
 To set the maximum time to wait for a response after a tool call to the MCP server:
 
-1. Click the `Network Timeout` pulldown at the bottom of the individual MCP server's config box and change the time. Default is 1 minute but it can be set between 30 seconds and 5 minutes.
+1. Click the `Network Timeout` pulldown at the bottom of the individual MCP server's config box and change the time. Default is 1 minute; you can choose values from 15 seconds up to 60 minutes.
 
 <img src="/img/using-mcp-in-roo/using-mcp-in-roo-6.png" alt="Network Timeout pulldown" width="400" />
 

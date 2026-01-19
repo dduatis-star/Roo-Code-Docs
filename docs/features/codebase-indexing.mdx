@@ -166,7 +166,7 @@ This guide explains each setting available in the configuration popover.
 
 - **Embedder Provider**
   - **Purpose**: To select your source for generating AI embeddings.
-  - **Behavior**: This dropdown menu determines which configuration fields are shown. Your options are **OpenAI**, **Google Gemini**, **Ollama**, and **OpenAI Compatible**.
+  - **Behavior**: This dropdown menu determines which configuration fields are shown. Common options include **OpenAI**, **Google Gemini**, **Ollama**, and **OpenAI Compatible** (availability depends on your Roo Code version).
 
 - **API Key** (for OpenAI, Gemini, OpenAI Compatible)
   - **Purpose**: The secret key to authenticate with your chosen provider.
@@ -221,10 +221,10 @@ The system uses a sophisticated parsing strategy:
 
 1. **Tree-sitter First**: For supported languages, it uses AST parsing to identify semantic code blocks (functions, classes, methods)
 2. **Markdown Support**: Indexes Markdown files by treating headers as semantic entry points
-3. **Intelligent Fallback**: For unsupported file types, it falls back to line-based chunking
+3. **Intelligent Fallback**: For supported file types where Tree-sitter parsing isn’t used (or yields no semantic captures), it falls back to line-based chunking
 
 **Block Sizing**:
-- Minimum: 100 characters
+- Minimum: 50 characters
 - Maximum: 1,000 characters
 - Large functions are split intelligently at logical boundaries
 
