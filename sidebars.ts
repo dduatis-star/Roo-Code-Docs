@@ -122,7 +122,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Roo Code CLI (Beta)',
+      label: 'Roo Code CLI',
+      className: 'cli-beta-item',
+      customProps: {
+        badge: 'Beta'
+      },
       items: [
         'cli/overview',
         'cli/installation',

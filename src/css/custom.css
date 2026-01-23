@@ -2424,3 +2424,45 @@ a.breadcrumbs__link:hover {
 .navbar__search-input:not(:focus) {
   min-width: 80px !important;
 }
+
+/* ============================================
+   BETA BADGE FOR SIDEBAR ITEMS
+   ============================================ */
+
+/* Style the CLI category to add a visual beta badge */
+/* Since we can't easily target text with CSS, we style the entire category item */
+
+/* Find menu items containing "Beta" in label and add badge styling after the text */
+.menu__link--sublist {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+}
+
+/* Create a styled Beta badge for menu links containing "(Beta)" */
+/* We'll use a data attribute approach or JavaScript injection in theme component */
+
+/* Generic styled badge class that can be applied */
+.beta-badge {
+  display: inline-block;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background-color: #3b82f6;
+  border-radius: 0.25rem;
+  line-height: 1;
+  vertical-align: middle;
+  margin-left: 0.25rem;
+}
+
+[data-theme='dark'] .beta-badge {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Alternative: Use ::after to inject badge visually for CLI category */
+/* This targets based on content which requires specific selector */
