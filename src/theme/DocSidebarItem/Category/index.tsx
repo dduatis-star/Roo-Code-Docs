@@ -6,24 +6,30 @@ import type {WrapperProps} from '@docusaurus/types';
 type Props = WrapperProps<typeof CategoryType>;
 
 export default function CategoryWrapper(props: Props): React.ReactElement {
-  const {item} = props;
+  const {item, ...rest} = props;
   const badge = item.customProps?.badge as string | undefined;
   
-  // If there's a badge, modify the item label to include it
-  if (badge) {
-    const modifiedItem = {
-      ...item,
-      label: (
-        <>
-          {item.label}
-          {' '}
-          <span className="beta-badge">{badge}</span>
-        </>
-      ),
-    };
-    
-    return <Category {...props} item={modifiedItem} />;
+  if (!badge) {
+    return <Category {...props} />;
   }
-  
-  return <Category {...props} />;
+
+  // Create modified props with badge className for CSS targeting
+  const modifiedProps = {
+    ...rest,
+    item: {
+      ...item,
+      className: `${item.className || ''} has-badge`.trim(),
+      customProps: {
+        ...item.customProps,
+        badgeText: badge,
+      }
+    }
+  };
+
+  return (
+    <div className="sidebar-item-with-badge">
+      <Category {...modifiedProps} />
+      <span className="beta-badge">{badge}</span>
+    </div>
+  );
 }
