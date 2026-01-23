@@ -9,13 +9,20 @@ export default function CategoryWrapper(props: Props): React.ReactElement {
   const {item} = props;
   const badge = item.customProps?.badge as string | undefined;
   
+  // If there's a badge, modify the item label to include it
   if (badge) {
-    return (
-      <div style={{display: 'flex', alignItems: 'center', gap: '0.375rem'}}>
-        <Category {...props} />
-        <span className="beta-badge">{badge}</span>
-      </div>
-    );
+    const modifiedItem = {
+      ...item,
+      label: (
+        <>
+          {item.label}
+          {' '}
+          <span className="beta-badge">{badge}</span>
+        </>
+      ),
+    };
+    
+    return <Category {...props} item={modifiedItem} />;
   }
   
   return <Category {...props} />;
