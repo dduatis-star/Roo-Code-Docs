@@ -1,0 +1,373 @@
+.promoContainer {
+  position: relative;
+  width: 100%;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b4e 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 
+    0 0 60px rgba(139, 92, 246, 0.15),
+    0 0 100px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Animated background glow */
+.backgroundGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(139, 92, 246, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 70% 50%,
+    rgba(59, 130, 246, 0.15) 0%,
+    transparent 50%
+  );
+  animation: pulseGlow 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) rotate(5deg);
+  }
+}
+
+/* Decorative claw marks */
+.clawMarks {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  display: flex;
+  gap: 8px;
+  transform: rotate(-15deg);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.clawMark {
+  width: 6px;
+  height: 80px;
+  background: linear-gradient(180deg, #8b5cf6 0%, transparent 100%);
+  border-radius: 3px;
+  animation: clawSlash 3s ease-in-out infinite;
+}
+
+.clawMark:nth-child(2) {
+  height: 100px;
+  animation-delay: 0.1s;
+}
+
+.clawMark:nth-child(3) {
+  height: 60px;
+  animation-delay: 0.2s;
+}
+
+@keyframes clawSlash {
+  0%, 100% {
+    opacity: 0.1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-10px);
+  }
+}
+
+/* Content layout */
+.promoContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Trending badge */
+.trendingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4ade80;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.trendingDot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: trendingPulse 2s ease-in-out infinite;
+}
+
+@keyframes trendingPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+  }
+}
+
+/* Headline */
+.headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.headlinePrefix {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.openClawText {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 30%, #60a5fa 70%, #22d3ee 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
+  animation: textShimmer 5s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes textShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Description */
+.description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1.75rem 0;
+  max-width: 480px;
+}
+
+/* CTA buttons */
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  box-shadow: 
+    0 4px 12px rgba(139, 92, 246, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.primaryCta:hover {
+  background: linear-gradient(135deg, #9d7cff 0%, #7c7fff 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(139, 92, 246, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.primaryCta:active {
+  transform: translateY(0);
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Dismiss button */
+.dismissButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.dismissButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dismissButton:focus {
+  outline: 2px solid rgba(139, 92, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .promoContainer {
+    padding: 2rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .clawMarks {
+    top: 10%;
+    right: 2%;
+    opacity: 0.05;
+  }
+
+  .clawMark {
+    width: 4px;
+    height: 50px;
+  }
+
+  .clawMark:nth-child(2) {
+    height: 65px;
+  }
+
+  .clawMark:nth-child(3) {
+    height: 40px;
+  }
+
+  .trendingBadge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .headlinePrefix {
+    font-size: 0.875rem;
+  }
+
+  .openClawText {
+    font-size: 2.25rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .ctaContainer {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dismissButton {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.375rem;
+  }
+
+  .dismissButton svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .promoContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .openClawText {
+    font-size: 1.875rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .backgroundGlow,
+  .clawMark,
+  .trendingDot,
+  .openClawText {
+    animation: none;
+  }
+  
+  .backgroundGlow {
+    opacity: 0.6;
+  }
+  
+  .openClawText {
+    background-position: 0% 50%;
+  }
+}
