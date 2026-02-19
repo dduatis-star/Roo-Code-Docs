@@ -1,0 +1,24 @@
+---
+description: Roo Code 3.50.0 adds Gemini 3.1 Pro support across Gemini and Vertex providers, and ships CLI v0.1.0 with an NDJSON stdin protocol and list subcommands.
+keywords:
+  - roo code 3.50.0
+  - gemini 3.1 pro
+  - cli v0.1.0
+  - ndjson stdin
+---
+
+# Roo Code 3.50.0 Release Notes (2026-02-19)
+
+This release adds Gemini 3.1 Pro as the new default Gemini model and ships CLI v0.1.0 with a structured NDJSON stdin protocol and programmatic list subcommands.
+
+## Gemini 3.1 Pro Support
+
+Gemini 3.1 Pro (`gemini-3.1-pro-preview`) is now available in both the Gemini and Vertex providers and replaces Gemini 3 Pro as the default model. The model is also available via the Gemini custom-tools endpoint (`gemini-3.1-pro-preview-customtools`). Reasoning effort `medium` is supported, so your existing reasoning settings carry over without silently falling back. ([#11608](https://github.com/RooCodeInc/Roo-Code/pull/11608))
+
+## CLI v0.1.0
+
+The Roo Code CLI reaches v0.1.0 with three headline changes:
+
+* **NDJSON Stdin Protocol**: The stdin prompt stream has been overhauled from raw text lines to a structured NDJSON command protocol supporting `start`, `message`, `cancel`, `ping`, and `shutdown` commands with `requestId` correlation, ack/done/error lifecycle events, and queue telemetry. This enables reliable, scriptable automation pipelines. ([#11597](https://github.com/RooCodeInc/Roo-Code/pull/11597))
+* **List Subcommands**: New `list commands`, `list modes`, and `list models` subcommands provide programmatic discovery of available CLI resources in both JSON and text output formats. ([#11597](https://github.com/RooCodeInc/Roo-Code/pull/11597))
+* **Modularized Architecture**: The `run.ts` entry point has been reduced from ~900 lines to ~330 lines by extracting stdin stream logic into a dedicated `stdin-stream.ts` module. ([#11597](https://github.com/RooCodeInc/Roo-Code/pull/11597))
