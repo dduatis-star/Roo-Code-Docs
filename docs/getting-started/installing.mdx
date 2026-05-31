@@ -54,13 +54,17 @@ After installation, find the Roo Code icon (<KangarooIcon />) in the Activity Ba
 
 For VS Code-compatible editors without Marketplace access (like VSCodium and Windsurf):
 
-1. Open your editor
-2. Access the Extensions view
+1. Open your editor (e.g., VSCodium)
+2. Access the Extensions view: click the Extensions icon in the sidebar or press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS)
 3. Search for "Roo Code"
 4. Select "Roo Code" by RooVeterinaryInc and click **Install**
-5. Reload if prompted
+5. Reload the editor if prompted
 
 <img src="/img/installing/installing-3.png" alt="Open VSX Registry with Roo Code extension ready to install" width="400" />
+
+:::tip VSCodium users
+VSCodium uses the [Open VSX Registry](https://open-vsx.org/) by default instead of the VS Code Marketplace. Roo Code is published on Open VSX, so searching for "Roo Code" in the VSCodium Extensions view will find it directly -- no extra configuration needed.
+:::
 
 
 ## Roo Code Nightly
@@ -94,21 +98,38 @@ For instructions on setting up Roo Code for local development, building from sou
 
 ---
 
+## Verify Your Installation
+
+After installing Roo Code, follow these steps to confirm everything is working:
+
+1. **Find the Roo Code icon** (<KangarooIcon />) in the Activity Bar (the vertical bar on the side of your editor). Click it to open the Roo Code panel.
+2. **Check the Extensions list**: open the Extensions view (`Ctrl+Shift+X` / `Cmd+Shift+X`) and confirm "Roo Code" appears as **Enabled**.
+3. **Open the Output panel**: go to View → Output, then select "Roo Code" from the dropdown. If Roo Code loaded successfully, you will see initialization log messages with no errors.
+
+If all three checks pass, your installation is working correctly. Next step: [connect an API provider](/getting-started/connecting-api-provider) so Roo Code can talk to an LLM.
+
+---
+
 ## Troubleshooting
 
 <img src="/img/installing/installing-4.png" alt="VS Code Output panel showing Roo Code logs for troubleshooting" width="100%" />
 *VS Code Output panel showing Roo Code logs for troubleshooting*
 
 **Extension Not Visible**
-* Restart VS Code
+* Restart your editor
 * Verify Roo Code is listed and enabled in Extensions
 * Try disabling and re-enabling
 * Check Output panel for errors (View → Output, select "Roo Code")
 
 **Installation Problems**
 * Ensure stable internet connection
-* Verify VS Code version 1.84.0 or later
-* If VS Code Marketplace is inaccessible, try the Open VSX Registry method
+* Verify your editor is based on VS Code 1.84.0 or later
+* If the VS Code Marketplace is inaccessible, try the Open VSX Registry method or install manually from a VSIX file
+
+**VSCodium-Specific Issues**
+* Make sure your VSCodium version is up to date -- Roo Code requires an engine version of 1.84.0+
+* If searching for "Roo Code" returns no results, confirm that VSCodium is configured to use the Open VSX Registry (this is the default). Check `product.json` for `"extensionsGallery"` pointing to `https://open-vsx.org`
+* You can also install manually: download the `.vsix` file from the [GitHub Releases page](https://github.com/RooCodeInc/Roo-Code/releases), then in VSCodium go to Extensions → "..." menu → "Install from VSIX..."
 
 ---
 
